@@ -1,0 +1,180 @@
+
+.hero {
+    min-height: 650px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: url('./hero.png') center center / cover no-repeat;
+    overflow: hidden;
+}
+
+/* Rasm ustidagi qoramtir qatlam */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 25, 32, 0.78) 0%,
+        rgba(15, 25, 32, 0.48) 45%,
+        rgba(15, 25, 32, 0.08) 100%
+    );
+}
+
+/* CONTENT */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-list {
+    list-style: none;
+}
+
+.hero-item {
+    max-width: 650px;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    position: relative;
+    animation: heroFade 0.8s ease forwards;
+}
+
+.hero-title::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 4px;
+    background: #C6A56B;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.hero-text {
+    color: #e8e5df;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+.hero-btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-btn1,
+.hero-btn2 {
+    padding: 16px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.35s ease;
+}
+
+.hero-btn1 {
+    background: #C6A56B;
+    color: #fff;
+    border: 1px solid #C6A56B;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn1:hover {
+    background: #ad8b53;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(198, 165, 107, 0.3);
+}
+
+.hero-btn2 {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.hero-btn2:hover {
+    background: #fff;
+    color: #172B3A;
+    transform: translateY(-4px);
+}
+
+/* DECORATIVE */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -180px;
+    box-shadow: 0 0 0 35px rgba(255,255,255,0.025),
+                0 0 0 70px rgba(255,255,255,0.02);
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 550px;
+        background-position: center;
+    }
+
+    .hero-item {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 65px;
+    }
+
+    .hero-text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+
+    .hero-btns {
+        gap: 10px;
+    }
+
+    .hero-btn1,
+    .hero-btn2 {
+        padding: 13px 17px;
+        font-size: 12px;
+    }
+}

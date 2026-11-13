@@ -1,0 +1,275 @@
+
+.section {
+    padding: 90px 0;
+    background: #F7F5F0;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    color: #C6A56B;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.section-title-name {
+    margin-top: 12px;
+    font-size: 36px;
+    color: #172B3A;
+}
+
+.section-gallery {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 25px;
+}
+
+.section-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 350px;
+    gap: 25px;
+    width: max-content;
+    animation: sectionMove 35s linear infinite;
+}
+
+.section-gallery:hover .section-track {
+    animation-play-state: paused;
+}
+
+.section-card {
+    width: 350px;
+}
+
+.section-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(23, 43, 58, 0.08);
+    transition: 0.35s ease;
+}
+
+.section-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(23, 43, 58, 0.15);
+}
+
+/* Rasm */
+
+.section-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.section-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.section-item:hover .section-image img {
+    transform: scale(1.06);
+}
+
+/* Забронировать */
+
+.section-book-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    opacity: 0;
+    visibility: hidden;
+
+    padding: 14px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #C6A56B;
+    color: #172B3A;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.35s ease;
+}
+
+.section-item:hover .section-book-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+}
+
+.section-book-btn:hover {
+    background: #172B3A;
+    color: #fff;
+}
+
+.section-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 7px 12px;
+    background: #172B3A;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Ma'lumotlar */
+
+.section-info {
+    padding: 22px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: #172B3A;
+    font-size: 20px;
+}
+
+.section-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.section-text {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+    font-size: 14px;
+}
+
+.section-text strong {
+    color: #172B3A;
+}
+
+.section-info hr {
+    margin: 22px 0;
+    border: none;
+    border-top: 1px solid #e8e5df;
+}
+
+.section-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-bottom data {
+    color: #172B3A;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.section-btn {
+    padding: 11px 15px;
+    border: 1px solid #C6A56B;
+    background: transparent;
+    color: #172B3A;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.section-btn:hover {
+    background: #172B3A;
+    color: #fff;
+}
+
+/* Marquee animation */
+
+@keyframes sectionMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 12.5px));
+    }
+}
+
+/* Загрузить все */
+
+.section-load-btn {
+    display: block;
+    margin: 35px auto 0;
+    padding: 15px 45px;
+    border: 1px solid #172B3A;
+    background: #172B3A;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.section-load-btn:hover {
+    background: #C6A56B;
+    border-color: #C6A56B;
+    color: #172B3A;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title-name {
+        font-size: 28px;
+    }
+
+    .section-track {
+        grid-auto-columns: 300px;
+        animation-duration: 30s;
+    }
+
+    .section-card {
+        width: 300px;
+    }
+
+    .section-image {
+        height: 200px;
+    }
+
+    .section-book-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title-name {
+        font-size: 24px;
+    }
+
+    .section-track {
+        grid-auto-columns: 280px;
+        gap: 15px;
+    }
+
+    .section-card {
+        width: 280px;
+    }
+
+    .section-info {
+        padding: 17px;
+    }
+
+    .section-bottom data {
+        font-size: 19px;
+    }
+}

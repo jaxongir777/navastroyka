@@ -1,0 +1,146 @@
+
+.arcit {
+    padding: 100px 0;
+    background: #F7F5F0;
+}
+
+.arcit-heading {
+    margin-bottom: 50px;
+}
+
+.arcit-subtitle {
+    color: #C6A56B;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.arcit-title-name {
+    margin-top: 13px;
+    color: #172B3A;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.arcit-heading-text {
+    margin-top: 15px;
+    color: #858585;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Cards */
+
+.arcit-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    list-style: none;
+}
+
+.arcit-item {
+    position: relative;
+    min-height: 290px;
+    padding: 30px 24px;
+    overflow: hidden;
+
+    background: #fff;
+    border: 1px solid #EAE6DE;
+    border-radius: 8px;
+
+    transition: 0.35s ease;
+}
+
+.arcit-item:hover {
+    background: #172B3A;
+    border-color: #172B3A;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(23, 43, 58, 0.13);
+}
+
+.arcit-number {
+    display: inline-block;
+    color: #C6A56B;
+    font-size: 42px;
+    font-weight: 500;
+    transition: 0.35s;
+}
+
+.arcit-line {
+    width: 45px;
+    height: 2px;
+    margin: 25px 0;
+    background: #C6A56B;
+}
+
+.arcit-title {
+    margin-bottom: 15px;
+    color: #172B3A;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: 0.35s;
+}
+
+.arcit-text {
+    color: #858585;
+    font-size: 14px;
+    line-height: 1.8;
+    transition: 0.35s;
+}
+
+.arcit-item:hover .arcit-title {
+    color: #F7F5F0;
+}
+
+.arcit-item:hover .arcit-text {
+    color: #B9C1C7;
+}
+
+.arcit-arrow {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+    color: #C6A56B;
+    font-size: 24px;
+    opacity: 0;
+    transform: translate(-8px, 8px);
+    transition: 0.35s;
+}
+
+.arcit-item:hover .arcit-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+    .arcit-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .arcit {
+        padding: 65px 0;
+    }
+
+    .arcit-title-name {
+        font-size: 28px;
+    }
+
+    .arcit-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .arcit-item {
+        min-height: 250px;
+        padding: 25px;
+    }
+
+    .arcit-number {
+        font-size: 35px;
+    }
+}

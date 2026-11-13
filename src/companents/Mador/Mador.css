@@ -1,0 +1,194 @@
+
+.mador {
+    padding: 100px 0;
+    background: #172B3A;
+    overflow: hidden;
+}
+
+.mador-heading {
+    margin-bottom: 45px;
+}
+
+.mador-subtitle {
+    color: #C6A56B;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.mador-heading-title {
+    margin-top: 13px;
+    color: #F7F5F0;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.mador-heading-text {
+    margin-top: 15px;
+    color: #B9C1C7;
+    font-size: 15px;
+}
+
+/* Carousel */
+
+.mador-gallery {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 25px;
+}
+
+.mador-track {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    animation: madorMove 45s linear infinite;
+}
+
+.mador-gallery:hover .mador-track {
+    animation-play-state: paused;
+}
+
+/* Card */
+
+.mador-card {
+    position: relative;
+    width: 420px;
+    min-height: 300px;
+    padding: 30px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    background: #F7F5F0;
+    border-radius: 10px;
+
+    transition: 0.35s ease;
+}
+
+.mador-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.mador-card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mador-avatar {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #172B3A;
+    color: #C6A56B;
+
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.mador-title {
+    color: #172B3A;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.mador-label {
+    display: block;
+    margin-top: 6px;
+    color: #999;
+    font-size: 12px;
+}
+
+.mador-stars {
+    margin-top: 22px;
+    color: #C6A56B;
+    font-size: 19px;
+    letter-spacing: 3px;
+}
+
+.mador-text {
+    position: relative;
+    z-index: 1;
+    margin-top: 15px;
+    color: #69747B;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.mador-quote {
+    position: absolute;
+    right: 20px;
+    bottom: -65px;
+    color: rgba(198, 165, 107, 0.12);
+    font-size: 200px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Animation */
+
+@keyframes madorMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 12.5px));
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .mador {
+        padding: 70px 0;
+    }
+
+    .mador-heading-title {
+        font-size: 30px;
+    }
+
+    .mador-card {
+        width: 340px;
+        min-height: 320px;
+        padding: 25px;
+    }
+
+    .mador-track {
+        animation-duration: 35s;
+    }
+}
+
+@media (max-width: 480px) {
+    .mador {
+        padding: 55px 0;
+    }
+
+    .mador-heading-title {
+        font-size: 25px;
+    }
+
+    .mador-heading-text {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .mador-card {
+        width: 285px;
+        min-height: 340px;
+        padding: 20px;
+    }
+
+    .mador-title {
+        font-size: 14px;
+    }
+
+    .mador-text {
+        font-size: 13px;
+    }
+}
